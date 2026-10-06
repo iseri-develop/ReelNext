@@ -12,11 +12,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.iseridev.reelnext.ui.theme.ReelNextTheme
-
+import com.example.iseridev.reelnext.BuildConfig
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        android.util.Log.d("ReelNext", "Token configurado: ${BuildConfig.TMDB_TOKEN.isNotBlank()}")
         setContent {
             ReelNextTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
